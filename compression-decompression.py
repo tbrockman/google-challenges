@@ -4,6 +4,7 @@ def decompress(compressed, start):
     i = start
     num = 0
     decompressed = ""
+
     while (i < len(compressed)-1):
 
         while(compressed[i].isdigit()):
@@ -27,6 +28,6 @@ def decompress(compressed, start):
     return decompressed, i
 
 if __name__ == "__main__":
-    compressed = input("Compressed compressed: ")
+    compressed = input("Decompress compressed: ")
     decompressed, _ = decompress(compressed, 0)
     print(decompressed)

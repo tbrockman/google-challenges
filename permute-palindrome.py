@@ -73,3 +73,4 @@ def can_make_palindrome(string, counts):
 if __name__ == "__main__":
     string = input("String to create permuted palindromes: ")
     palindromes = permute_palindromes(string)
+    print(palindromes)
