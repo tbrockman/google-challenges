@@ -1,32 +1,32 @@
 # https://techdevguide.withgoogle.com/paths/advanced/compress-decompression/#code-challenge
 
-def decompress(string, start):
+def decompress(compressed, start):
     i = start
     num = 0
-    token = ""
-    while (i < len(string)-1):
+    decompressed = ""
+    while (i < len(compressed)-1):
 
-        while(string[i].isdigit()):
-            num = num * 10 + int(string[i]);
+        while(compressed[i].isdigit()):
+            num = num * 10 + int(compressed[i]);
             i += 1
 
-        if (string[i].isalpha()):
-            token += string[i]
+        if (compressed[i].isalpha()):
+            decompressed += compressed[i]
 
         else:
-            if (string[i] == '['):
-                decomp, end = decompress(string, i+1)
-                token += (int(num) * decomp)
+            if (compressed[i] == '['):
+                decomp, end = decompress(compressed, i+1)
+                decompressed += (int(num) * decomp)
                 i = end
 
-            elif (string[i] == ']'):
-                return token, i
+            elif (compressed[i] == ']'):
+                return decompressed, i
 
         i += 1
 
-    return token, i
+    return decompressed, i
 
 if __name__ == "__main__":
-    compressed = input("Compressed string: ")
+    compressed = input("Compressed compressed: ")
     decompressed, _ = decompress(compressed, 0)
     print(decompressed)
