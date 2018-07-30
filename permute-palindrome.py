@@ -15,6 +15,8 @@ def permute_palindromes(string):
         # convert string to list to simplify swapping
         permute(list(initial), 0, palindromes, counts['odd'])
 
+    return palindromes
+
 def swap(string, x, y):
     temp = string[x]
     string[x] = string[y]
@@ -62,7 +64,8 @@ def can_make_palindrome(string, counts):
         if (k != 'odd' and counts[k] & 1):
             odd += 1
             counts['odd'] = k
-            if (odd > 1) break
+            if (odd > 1):
+                break
 
     # if string length is odd
     if (len(string) & 1):
@@ -71,6 +74,6 @@ def can_make_palindrome(string, counts):
         return odd == 0
 
 if __name__ == "__main__":
-    string = input("String to create permuted palindromes: ")
+    string = input("String to permute for palindromes: ")
     palindromes = permute_palindromes(string)
     print(palindromes)
