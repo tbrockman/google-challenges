@@ -1,3 +1,5 @@
+#https://techdevguide.withgoogle.com/paths/advanced/working-in-multiple-languages-palindrome-permutation-2/#!
+
 def permute_palindromes(string):
     palindromes = []
     counts = count_letters(string)
