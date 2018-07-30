@@ -26,7 +26,7 @@ def calculate_lake_volume(heights):
     forward_volume, max_idx = calculate_forward_pass(heights)
     # perform a pass on reverse list sliced to maximal element
     # trading some memory for readability and code reuse
-    backward_volume, __ = calculate_forward_pass(reversed(heights[max_idx:]))
+    backward_volume, _ = calculate_forward_pass(reversed(heights[max_idx:]))
     return forward_volume + backward_volume
 
 def process_height_input(input):
