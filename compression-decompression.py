@@ -1,7 +1,5 @@
 # https://techdevguide.withgoogle.com/paths/advanced/compress-decompression/#code-challenge
 
-import sys
-
 def decompress(string, start):
     i = start
     num = 0
@@ -29,5 +27,6 @@ def decompress(string, start):
     return token, i
 
 if __name__ == "__main__":
-    test = input("Compressed string: ")
-    print(decompress(test, 0)[0])
+    compressed = input("Compressed string: ")
+    decompressed, _ = decompress(compressed, 0)
+    print(decompressed)
