@@ -1,4 +1,4 @@
-#https://techdevguide.withgoogle.com/paths/advanced/working-in-multiple-languages-palindrome-permutation-2/#!
+# https://techdevguide.withgoogle.com/paths/advanced/working-in-multiple-languages-palindrome-permutation-2/#!
 
 def permute_palindromes(string):
     palindromes = []
@@ -11,7 +11,6 @@ def permute_palindromes(string):
 
             if (k != 'odd'):
                 initial += (counts[k] // 2) * k
-
         # convert string to list to simplify swapping
         permute(list(initial), 0, palindromes, counts['odd'])
 
@@ -21,6 +20,7 @@ def swap(string, x, y):
     temp = string[x]
     string[x] = string[y]
     string[y] = temp
+
     return string
 
 def permute(string_list, start, palindromes, separator=''):
