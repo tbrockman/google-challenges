@@ -13,7 +13,6 @@
 # O(logn) to find arbitrary elements afterwards
 
 import math
-import sys
 
 class CircularList:
 
@@ -84,13 +83,9 @@ class CircularList:
 
         return -1
 
-def string_list_to_int(input):
-    ints = [int(num) for num in input.split(" ")]
-    return ints
-
 if __name__ == "__main__":
     string_list = input("Enter a space-separated circular list of integers: ")
-    ints = string_list_to_int(string_list)
+    ints = [int(num) for num in string_list.split(" ")]
     circular_list = CircularList(ints)
     print("List minimum:", circular_list.get_min())
 
